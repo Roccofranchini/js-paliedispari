@@ -26,7 +26,7 @@ Dichiariamo chi ha vinto.
 
 //creiamo le variabili dei dati dell'utente
 
-// var evenOrOdd = prompt('scegli pari o dispari');
+var evenOrOdd = prompt('scegli pari o dispari');
 var userNumber = prompt('scegli un nuemro da 1 a 5');
 
 console.log(userNumber);
@@ -34,17 +34,50 @@ console.log(userNumber);
 //numero estratto 
 var computerNumber = getComputerNumber(1, 6);
 
-
 console.log(computerNumber);
+
+//sommo
 
 var sum = parseInt(userNumber) + computerNumber;
 console.log(sum);
+
+//applico la funzione pari
+
+console.log(isEven(sum));
+
+//verifico l'esito
+
+if (isEven(sum) && evenOrOdd == 'pari') {
+    console.log('hai detto pari ed è pari')
+}
+else if (!isEven(sum) && evenOrOdd == 'pari') {
+    console.log('hai detto pari ed è dispari')
+}
+else if (!isEven(sum) && evenOrOdd == 'dispari') {
+    console.log('hai detto dispari ed è dispari')
+}
+else {
+    console.log('hai detto dispari ed è pari')
+}
+
+
+
+
 
 //funzione numero casuale
 
 function getComputerNumber(min, max,) {
 
     return Math.floor(Math.random() * (max - min) + min);
+}
+
+//funzione pari o dispari
+
+function isEven(number) {
+    if (number % 2 === 0) {
+        return true;
+    }
+    return false;
 }
 
 
