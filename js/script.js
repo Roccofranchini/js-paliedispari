@@ -25,10 +25,11 @@ Dichiariamo chi ha vinto.
 //PARI E DISPARI
 
 //creiamo le variabili dei dati dell'utente
-
+var risultato = document.getElementById('display');
 var evenOrOdd = prompt('scegli pari o dispari');
 var userNumber = prompt('scegli un nuemro da 1 a 5');
 
+console.log(evenOrOdd);
 console.log(userNumber);
 
 //numero estratto 
@@ -47,19 +48,14 @@ console.log(isEven(sum));
 
 //verifico l'esito
 
-if (isEven(sum) && evenOrOdd == 'pari') {
-    console.log('hai detto pari ed è pari')
-}
-else if (!isEven(sum) && evenOrOdd == 'pari') {
-    console.log('hai detto pari ed è dispari')
-}
-else if (!isEven(sum) && evenOrOdd == 'dispari') {
-    console.log('hai detto dispari ed è dispari')
-}
-else {
-    console.log('hai detto dispari ed è pari')
+
+if ((isEven(sum) && evenOrOdd == 'pari') || (!isEven(sum) && evenOrOdd == 'dispari')) {
+    risultato.innerHTML = 'HAI VINTO!';
 }
 
+else {
+    risultato.innerHTML = 'HAI PERSO!';
+}
 
 
 
