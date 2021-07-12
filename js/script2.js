@@ -10,7 +10,9 @@ Creare una funzione per capire se la parola inserita è palindroma
 */
 
 // raccogliamo la parola dell'utente
+var risultato = document.getElementById('display');
 var userWord = prompt('inserire una parola');
+var message = '';
 
 //creiamo una funzione per verificare se è palindroma
 
@@ -40,4 +42,13 @@ function isPal(word) {
 
 }
 
-console.log(isPal(userWord));
+
+if (isPal(userWord)) {
+    message = 'La parola ' + userWord + ' è palindroma';
+}
+
+else {
+    message = 'La parola ' + userWord + ' non è palindroma';
+}
+
+risultato.innerHTML = message;
