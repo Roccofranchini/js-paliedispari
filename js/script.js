@@ -26,6 +26,25 @@ Dichiariamo chi ha vinto.
 
 //creiamo le variabili dei dati dell'utente
 
-var evenOrOdd = prompt('scegli pari o dispari');
+// var evenOrOdd = prompt('scegli pari o dispari');
 var userNumber = prompt('scegli un nuemro da 1 a 5');
+
+console.log(userNumber);
+
+//numero estratto 
+var computerNumber = getComputerNumber(1, 6);
+
+
+console.log(computerNumber);
+
+var sum = parseInt(userNumber) + computerNumber;
+console.log(sum);
+
+//funzione numero casuale
+
+function getComputerNumber(min, max,) {
+
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
 
