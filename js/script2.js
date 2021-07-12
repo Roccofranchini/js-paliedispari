@@ -15,6 +15,7 @@ var userWord = prompt('inserire una parola');
 //creiamo una funzione per verificare se è palindroma
 
 function isPal(word) {
+    var esito = false;
     var letters = word.split('');
 
     console.log(letters);
@@ -22,14 +23,21 @@ function isPal(word) {
 
     var result = '';
 
-    for (var i = word.length; i < 0; i--) {
+    for (var i = (word.length - 1); i >= 0; i--) {
         var letter = letters[i];
 
         result += letter;
-
-        console.log(result);
     }
-    return result;
+
+    console.log(result);
+    console.log(word);
+
+    if (word === result) {
+        esito = true;
+    }
+
+    return esito;
+
 }
 
 console.log(isPal(userWord));
